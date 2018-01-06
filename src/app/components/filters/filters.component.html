@@ -1,23 +1,23 @@
 <ul>
   <li>
-    <input type="checkbox" ngModel="state.broadbandChecked">Broadband
+    <input type="checkbox" [(ngModel)]="state.broadbandChecked" (change)="onChange()" id="broadbandCheck">Broadband
   </li>
   <li>
-    <input type="checkbox" ngModel="state.tvChecked">TV
+    <input type="checkbox" [(ngModel)]="state.tvChecked" (change)="onChange()" id="tvCheck">TV
   </li>
   <li>
-    <input type="checkbox" ngModel="state.mobileChecked">Mobile
+    <input type="checkbox" [(ngModel)]="state.mobileChecked" (change)="onChange()" id="mobileCheck">Mobile
   </li>
 </ul>
 
 <div class="selects">
   Speed
-  <select>
+  <select (change)="onChange()" id="speedSelect">
     <option value="0">0</option>
     <option value="1">1</option>
   </select>
   Mobile Data
-  <select>
+  <select (change)="onChange()" id="dataSelect">
     <option value="0">0</option>
     <option value="1">1</option>
     <option value="2">2</option>

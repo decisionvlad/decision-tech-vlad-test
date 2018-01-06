@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import { BroadbandResult } from "app/types/broadbanddeals";
+import { BroadbandResult } from './types/broadbanddeals';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +9,15 @@ import { BroadbandResult } from "app/types/broadbanddeals";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(http: Http) {
-    http.get('assets/deals.json')
+  constructor() {
+    /*http.get('assets/deals.json')
       .map(res => res.json())
-      .subscribe(result => this.deals = result.deals);
+      .subscribe(result => this.deals = result.deals);*/
   }
 
   title = "start";
   deals: BroadbandResult.Deal[] = []
 
   onBurgerClick() {
-    console.log('bb');
   }
 }

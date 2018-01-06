@@ -16,12 +16,12 @@ export class FilterState {
   templateUrl: './filters.component.html',
   styleUrls: ['./filters.component.scss']
 })
-export class FiltersComponent implements OnChanges {
+export class FiltersComponent {
   @Output() change = new EventEmitter<FilterState>();
 
-  state = new FilterState(false, false, false, 0, 0);
+  private state = new FilterState(false, false, false, 0, 0);
 
-  ngOnChanges(changes: SimpleChanges): void {
+  onChange() {
     this.change.emit(this.state);
   }
 }

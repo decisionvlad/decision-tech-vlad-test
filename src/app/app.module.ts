@@ -4,10 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { SiteNav } from 'app/components/siteNav/siteNav';
-import { BurgerMenu } from 'app/components/burgerMenu/burgerMenu';
-import { HeaderComponent } from 'app/components/header/header.component';
-import { FiltersComponent } from 'app/components/filters/filters.component';
+import { SiteNav } from './components/siteNav/siteNav';
+import { BurgerMenu } from './components/burgerMenu/burgerMenu';
+import { FiltersComponent } from './components/filters/filters.component';
 import { GridComponent } from './components/grid/grid.component';
 
 
@@ -16,7 +15,6 @@ import { GridComponent } from './components/grid/grid.component';
     AppComponent,
     SiteNav,
     BurgerMenu,
-    HeaderComponent,
     FiltersComponent,
     GridComponent
   ],
