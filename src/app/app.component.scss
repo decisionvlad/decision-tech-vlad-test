@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reactive {
+  width: 500px;
+}
+
+#nav {
+  background: purple;
+}
+
+#main {
+  display: flex;
+}
+
+#grid {
+  width: 500px;
+  height: 200px;
+  background: orangered;
+}

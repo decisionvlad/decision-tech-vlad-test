@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  background: #dedede;
+  padding-left: 30px;
+}
+
+.selects {
+  display: flex;
+  flex-direction: column;
+  select {
+    width: 60px;
+  }
+}

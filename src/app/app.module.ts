@@ -4,15 +4,21 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { SiteNav } from "app/siteNav/siteNav";
-import { BurgerMenu } from "app/burgerMenu/burgerMenu";
+import { SiteNav } from 'app/components/siteNav/siteNav';
+import { BurgerMenu } from 'app/components/burgerMenu/burgerMenu';
+import { HeaderComponent } from 'app/components/header/header.component';
+import { FiltersComponent } from 'app/components/filters/filters.component';
+import { GridComponent } from './components/grid/grid.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SiteNav,
-    BurgerMenu
+    BurgerMenu,
+    HeaderComponent,
+    FiltersComponent,
+    GridComponent
   ],
   imports: [
     BrowserModule,
