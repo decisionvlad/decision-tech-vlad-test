@@ -10,6 +10,11 @@ import {MockBackend} from '@angular/http/testing';
 
 import { AppComponent } from './app.component';
 import { NO_ERRORS_SCHEMA } from "@angular/core/";
+import { SiteNav } from 'app/components/siteNav/siteNav';
+import { BurgerMenu } from 'app/components/burgerMenu/burgerMenu';
+import { FiltersComponent } from 'app/components/filters/filters.component';
+import { GridComponent } from 'app/components/grid/grid.component';
+import { HeaderComponent } from 'app/components/header/header.component';
 
 
 
@@ -18,7 +23,13 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       imports: [HttpModule],
       declarations: [
-        AppComponent],
+        AppComponent,
+        HeaderComponent,
+        SiteNav,
+        BurgerMenu,
+        FiltersComponent,
+        GridComponent
+      ],
         schemas: [NO_ERRORS_SCHEMA],
       providers: [        
         { provide: XHRBackend, useClass: MockBackend },

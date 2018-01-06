@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FiltersComponent } from './filters.component';
+import { FormsModule } from '@angular/forms';
 
 describe('FiltersComponent', () => {
   let component: FiltersComponent;

@@ -15,9 +15,10 @@ export class AppComponent {
       .subscribe(result => this.deals = result.deals);
   }
 
-  title = "start"
+  title = "start";
   deals: BroadbandResult.Deal[] = []
 
-  ngOnDestroy() {
+  onBurgerClick() {
+    console.log('bb');
   }
 }
