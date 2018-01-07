@@ -2,13 +2,18 @@
   display: flex;
   flex-direction: column;
   width: 200px;
-  background: #dedede;
 }
 
 .mobile {
   position: absolute;
   left: 0px;
   top: 0px;
+  background: #333;
+}
+
+.desktop {
+  height: 100%;
+  background: #dedede;
 }
 
 .selects {

@@ -11,6 +11,8 @@ import { Deal } from '../../models/deal';
   styleUrls: ['./grid.component.scss']
 })
 export class GridComponent {
+  @Input() isMobile: boolean;
+  
   private filter: FilterState;
 
   setFilter(ff: FilterState) {

@@ -1,4 +1,31 @@
-<table>
+<div *ngIf="isMobile" class="vert">
+  <div *ngFor="let d of filteredDeals" class="panel">
+    <div>{{ d.title }}</div>
+    <div>{{ d.contractLength }}months</div>
+    <div>{{ d.speed }} {{ d.usage }}</div>
+    <div>
+      <img [src]="d.logo" />
+    </div>
+    <div>
+      <div *ngIf="d.isTV" class="channels start">
+        <img *ngFor="let img of d.channelLogos" [src]="img" />
+      </div>
+      <div *ngIf="!d.isTV">N/A</div>
+    </div>
+    <div>
+      <div *ngIf="d.isMobile" class="data start">
+        <div>Data: {{ d.data }}</div>
+        <div>Minutes: {{ d.minutes }}</div>
+        <div>Texts: {{ d.texts }}</div>
+        <div>Connection: {{ d.connectionType }}</div>
+        <div *ngIf="!d.isMobile">N/A</div>
+      </div>
+    </div>
+    <td>&#163;{{ d.totalCost }}</td>
+  </div>
+</div>
+
+<table *ngIf="!isMobile">
   <tr>
     <th>About</th>
     <th>contract length</th>
@@ -14,19 +41,20 @@
     <td>{{ d.speed }} {{ d.usage }}</td>
     <td><img [src]="d.logo"/></td>
     <td>
-      <div *ngIf="d.isTV" class="channels">
+      <div *ngIf="d.isTV" class="channels center">
         <img *ngFor="let img of d.channelLogos" [src]="img"/>
       </div>
-      <div *ngIf="!d.isTV" class="center">N/A</div>
+      <div *ngIf="!d.isTV">N/A</div>
     </td>
     <td>
-      <div *ngIf="d.isMobile" class="mobile">
+      <div *ngIf="d.isMobile" class="data center">
         <div>Data: {{ d.data }}</div>
         <div>Minutes: {{ d.minutes }}</div>
         <div>Texts: {{ d.texts }}</div>
         <div>Connection: {{ d.connectionType }}</div>
       </div>
-      <div *ngIf="!d.isMobile" class="center">N/A</div>
-    <td class="center">&#163;{{ d.totalCost }}</td>
+      <div *ngIf="!d.isMobile">N/A</div>
+    </td>
+    <td>&#163;{{ d.totalCost }}</td>
   </tr>
 </table>

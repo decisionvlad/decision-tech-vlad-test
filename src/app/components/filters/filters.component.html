@@ -1,4 +1,4 @@
-<div class="main" [class.mobile]="isMobile">
+<div class="main" [class.mobile]="isMobile" [class.desktop]="!isMobile">
   <ul>
     <li>
       <input type="checkbox" [(ngModel)]="state.broadbandChecked" (change)="onChange()" id="broadbandCheck">Broadband
