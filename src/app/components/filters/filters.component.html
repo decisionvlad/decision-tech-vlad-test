@@ -12,22 +12,26 @@
   </ul>
 
   <div>
-    <div [hidden]="!state.broadbandChecked" class="selects">
-      Speed
-      <select (change)="onChange()" [(ngModel)]="state.speed" id="speedSelect">
-        <option value="0">Any</option>
-        <option value="17">17</option>
-        <option value="52">52</option>
-        <option value="76">76</option>
-      </select>
+    <div [hidden]="!state.broadbandChecked">
+      <div class="selects">
+        Speed
+        <select (change)="onChange()" [(ngModel)]="state.speed" id="speedSelect">
+          <option value="0">Any</option>
+          <option value="17">17</option>
+          <option value="52">52</option>
+          <option value="76">76</option>
+        </select>
+      </div>
     </div>
-    <div [hidden]="!state.mobileChecked" class="selects">
-      Mobile Data
-      <select (change)="onChange()" [(ngModel)]="state.data" id="dataSelect">
-        <option value="0">Any</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
+    <div [hidden]="!state.mobileChecked">
+      <div class="selects">
+        Mobile Data
+        <select (change)="onChange()" [(ngModel)]="state.data" id="dataSelect">
+          <option value="0">Any</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
     </div>
   </div>
 </div>
