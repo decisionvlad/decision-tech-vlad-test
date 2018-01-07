@@ -1,25 +1,33 @@
-<ul>
-  <li>
-    <input type="checkbox" [(ngModel)]="state.broadbandChecked" (change)="onChange()" id="broadbandCheck">Broadband
-  </li>
-  <li>
-    <input type="checkbox" [(ngModel)]="state.tvChecked" (change)="onChange()" id="tvCheck">TV
-  </li>
-  <li>
-    <input type="checkbox" [(ngModel)]="state.mobileChecked" (change)="onChange()" id="mobileCheck">Mobile
-  </li>
-</ul>
+<div class="main" [class.mobile]="isMobile">
+  <ul>
+    <li>
+      <input type="checkbox" [(ngModel)]="state.broadbandChecked" (change)="onChange()" id="broadbandCheck">Broadband
+    </li>
+    <li>
+      <input type="checkbox" [(ngModel)]="state.tvChecked" (change)="onChange()" id="tvCheck">TV
+    </li>
+    <li>
+      <input type="checkbox" [(ngModel)]="state.mobileChecked" (change)="onChange()" id="mobileCheck">Mobile
+    </li>
+  </ul>
 
-<div class="selects">
-  Speed
-  <select (change)="onChange()" id="speedSelect">
-    <option value="0">0</option>
-    <option value="1">1</option>
-  </select>
-  Mobile Data
-  <select (change)="onChange()" id="dataSelect">
-    <option value="0">0</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-  </select>
+  <div>
+    <div [hidden]="!state.broadbandChecked" class="selects">
+      Speed
+      <select (change)="onChange()" [(ngModel)]="state.speed" id="speedSelect">
+        <option value="0">Any</option>
+        <option value="17">17</option>
+        <option value="52">52</option>
+        <option value="76">76</option>
+      </select>
+    </div>
+    <div [hidden]="!state.mobileChecked" class="selects">
+      Mobile Data
+      <select (change)="onChange()" [(ngModel)]="state.data" id="dataSelect">
+        <option value="0">Any</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+  </div>
 </div>

@@ -1,21 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import { Deal } from 'app/models/deal';
+import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
+import { BroadbandResult } from '../types/broadbanddeals';
+import { Deal } from '../models/deal';
 
 @Injectable()
 export class DealsService {
   private filename = './assets/deals.json';
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
   }
 
   getDeals(): Promise<Deal[]> {
-    return this.http.get(this.filename)
-      .map(res => {
-        const rawList = res.json() as any[];
-        return rawList.map(d => new Deal(d))
-      })
+    return this.http.get<BroadbandResult.RootObject>(this.filename)
+      .map(obj => obj.deals.map(o => new Deal(o)))
       .toPromise();
   }
 }

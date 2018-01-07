@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, HostListener, Input } from '@angular/core';
 
 @Component({
     selector: 'site-nav',
@@ -7,6 +7,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class SiteNav {
   @Output() burgerClick = new EventEmitter();
+  @Input() showBurger: boolean;
 
   onClick() {
     this.burgerClick.emit();

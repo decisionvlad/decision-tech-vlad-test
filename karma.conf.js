@@ -27,13 +27,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome_without_security'],
-    singleRun: false,
-    customLaunchers: {
-      Chrome_without_security: {
-        base: 'Chrome',
-        flags: ['--remote-debugging-port=9333']
-      }
-    }
+    browsers: ['Chrome'],
+    singleRun: false
   });
 };

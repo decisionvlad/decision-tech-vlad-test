@@ -1,14 +1,10 @@
 <div class="reactive">
 
-  <site-nav (burgerClick)="onBurgerClick()"></site-nav>
+  <site-nav [showBurger]="isSmallScreen" (burgerClick)="onBurgerClick()"></site-nav>
 
   <section id="main">
-    <filters id="filters"></filters>
-    <grid id="grid"></grid>
+    <filters [hidden]="!showFilters" [isMobile]="isSmallScreen" id="filters" (change)="onFilterChanged($event)"></filters>
+    <grid #grid id="grid"></grid>
   </section>
 
 </div>
-
-<!-- <div>
-    {{deals|json}}
-</div> -->

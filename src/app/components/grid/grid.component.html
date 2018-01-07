@@ -1,3 +1,32 @@
-<p>
-  grid works!
-</p>
+<table>
+  <tr>
+    <th>About</th>
+    <th>contract length</th>
+    <th>speed/usage</th>
+    <th>Offer</th>
+    <th>TV</th>
+    <th>Mobile</th>
+    <th>Cost</th>
+  </tr>
+  <tr *ngFor="let d of filteredDeals">
+    <td class="title">{{ d.title }}</td>
+    <td>{{ d.contractLength }}months</td>
+    <td>{{ d.speed }} {{ d.usage }}</td>
+    <td><img [src]="d.logo"/></td>
+    <td>
+      <div *ngIf="d.isTV" class="channels">
+        <img *ngFor="let img of d.channelLogos" [src]="img"/>
+      </div>
+      <div *ngIf="!d.isTV" class="center">N/A</div>
+    </td>
+    <td>
+      <div *ngIf="d.isMobile" class="mobile">
+        <div>Data: {{ d.data }}</div>
+        <div>Minutes: {{ d.minutes }}</div>
+        <div>Texts: {{ d.texts }}</div>
+        <div>Connection: {{ d.connectionType }}</div>
+      </div>
+      <div *ngIf="!d.isMobile" class="center">N/A</div>
+    <td class="center">&#163;{{ d.totalCost }}</td>
+  </tr>
+</table>

@@ -1,8 +1,14 @@
-:host {
+.main {
   display: flex;
   flex-direction: column;
   width: 200px;
   background: #dedede;
+}
+
+.mobile {
+  position: absolute;
+  left: 0px;
+  top: 0px;
 }
 
 .selects {
